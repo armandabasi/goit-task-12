@@ -32,7 +32,7 @@ class Birthday(Field):
     @Field.value.setter
     def value(self, value):
         try: 
-            self._value = datetime.strptime(value[0], "%d.%m.%Y")
+            self._value = datetime.strptime(value, "%d.%m.%Y")
         except:
             raise ValueError("Enter the date in the form dd.mm.yyyy")
 
@@ -56,8 +56,8 @@ class Record:
          
     def delete_phone(self, phone):
         for remove_phone in self.phones:
-                if phone == remove_phone.value:
-                    self.phones.remove(remove_phone)
+            if phone == remove_phone.value:
+                self.phones.remove(remove_phone)
 
     def find_phone(self, phones):
         for phone in phones: 

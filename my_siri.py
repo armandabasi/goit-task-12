@@ -114,7 +114,7 @@ def birth_day(data):
     name, b_day = create_data(data)
     if name not in contacts_book:
         raise ValueError ("This contact is not in the phone book. Please enter the correct name.")    
-    contacts_book[name].add_birth_day(b_day)
+    contacts_book[name].add_birth_day(b_day[0])
     return f"{name}'s birth day added."
 
 
